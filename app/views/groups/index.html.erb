@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Groups</h1>
+
+
+
+    <% @groups.each do |group| %>
+    <%= link_to user_group_activities_path(current_user, group) do %>
+      <div>
+        <p><%= group.name %></p>
+        <p><%= group.icon %></p>
+        <p><%= group.user_id %></p>
+      </div>
+    <% end %>
+    <% end %>
+
+
+<br>
+
+<%= link_to 'New Group', new_user_group_path %>

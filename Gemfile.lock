@@ -272,10 +272,10 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   cancancan
-  capybara (>= 3.26)
+  capybara
   database_cleaner
   devise
-  factory_bot_rails (~> 4.0)
+  factory_bot_rails
   faker
   jbuilder (~> 2.7)
   listen (~> 3.3)
