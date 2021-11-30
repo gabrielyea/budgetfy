@@ -5,6 +5,8 @@ class Group < ApplicationRecord
   validates :icon, presence: true
   validates :name, presence: true
 
+  scope :sortify, ->(sort_type) { order(created_at: sort_type) }
+
   def total_group_cost
     activities.reduce(0) do |sum, item|
       sum + item.amount

@@ -1,0 +1,30 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  height: 100vh;
+  background-color: #F5F6F8;
+
+  form {
+    width: 100%;
+    margin-top: 60px;
+    .my-field {
+      input {
+        background: #FFFFFF;
+        border: rgba(199, 198, 198, 0.555) 1px solid;
+        color: rgb(199, 198, 198);
+        width: 100%;
+        height: 3em;
+        font-size: 1em;
+        padding: 0 1em;
+      }
+    }
+  }
+
+  .message-link {
+    color: rgb(199, 198, 198);
+    text-decoration: none;
+  }
+}

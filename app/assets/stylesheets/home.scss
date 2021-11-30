@@ -1,3 +1,36 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'media_queries.scss';
+
+@include for-phone-only {
+  .home {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // height: 100vh;
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 50vh;
+      h1 {
+        font-size: 5rem;
+        padding: 2rem 0;
+      }
+    }
+    .btn-container {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: center;
+    }
+    form {
+      display: flex;
+      width: 100%;
+    }
+  }
+}

@@ -1,8 +1,11 @@
-<nav>
-  <%= link_to 'Sign in', new_user_session_path %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-  <% unless current_user.nil? %>
-    <%= current_user.email %>
-  <% end %>
+<nav class='nav-bar'>
+  <div class="back-link">
+    <%= link_to '<', root_path %>
+  </div>
+  <p>
+    <%= title %>
+  </p>
+  <div class="action-btn">
+    <%= action_btn %>
+  </div>
 </nav>
