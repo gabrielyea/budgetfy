@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities or /activities.json
   def index
-    @activities = Activity.all
+    @activities = Group.find(params['group_id']).activities
   end
 
   # GET /activities/1 or /activities/1.json
@@ -20,6 +20,7 @@ class ActivitiesController < ApplicationController
   # POST /activities or /activities.json
   def create
     @activity = Activity.new(activity_params)
+    @group = Group.find(params['group_id']).activities << @activity
 
     respond_to do |format|
       if @activity.save
