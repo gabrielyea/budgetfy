@@ -3,6 +3,26 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import 'media_queries.scss';
 
+.modal {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .modal-window {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    justify-content: center;
+    img {
+      width: 50px;
+    }
+  }
+}
+
 @include for-phone-only {
   .home {
     display: grid;

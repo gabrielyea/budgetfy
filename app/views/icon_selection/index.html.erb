@@ -1,21 +1,12 @@
-<section class="group">
-  <%= render 'shared/nav_bar', title: 'TRANSACTIONS', action_btn: ('Search') %>
-    <p id="notice"><%= notice %></p>
-      <div class="group-list">
-        <% @groups.each do |group| %>
-          <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>
-            <div class="group-card">
-              <p><%= group.icon %></p>
-              <div class="basic-data">
-                <p><%= group.name %></p>
-                <p><%= group.created_at.to_date.to_s(:long) %>
-              </div>
-              <p><%= group.total_group_cost %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-  <div class="btn-container">
-    <%= button_to 'ADD CATEGORY', new_user_group_path, method: :get, class:'btn-3' %>
+<turbo-frame id="modal">
+  <div class="modal" data-controller="modal" data-action="keyup@document->modal#escClose">
+    <button type="button" class="modal-backdrop" tabindex="-1" data-action="modal#close">Close</button>
+
+    <div class="modal-window">
+      <%= IconSelection.fetch_icons.each do |icon| %>
+        <%= image_tag icon %>
+      <%end%>
+    </div>
+
   </div>
-</section>
+</turbo-frame>
