@@ -11,6 +11,10 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
+    # url = 'https://iconsapi.com/api/search?appkey=61a6e29ae4b06f7969140bdc&query=icons&size=100'
+    # response = RestClient.get(url)
+    # @data = helpers.get_useful_info(response)
+    @data = []
     @group = Group.new
   end
 

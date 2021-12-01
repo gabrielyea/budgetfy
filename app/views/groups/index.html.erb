@@ -3,12 +3,14 @@
   <p id="notice"><%= notice %></p>
     <div class="group-list">
       <% @groups.each do |group| %>
-        <%= link_to user_group_activities_path(current_user, group) do %>
-          <div>
-            <p><%= group.total_group_cost %>
-            <p><%= group.name %></p>
+        <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>
+          <div class="group-card">
             <p><%= group.icon %></p>
-            <p><%= group.user_id %></p>
+            <div class="basic-data">
+              <p><%= group.name %></p>
+              <p><%= group.created_at.to_date.to_s(:long) %>
+            </div>
+            <p><%= group.total_group_cost %>
           </div>
         <% end %>
       <% end %>

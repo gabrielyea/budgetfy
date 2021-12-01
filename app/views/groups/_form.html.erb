@@ -22,6 +22,10 @@
   </div>
 
   <div class="field">
+    <%= form.select :icon_id, @data %>
+  </div>
+
+  <div class="field">
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
