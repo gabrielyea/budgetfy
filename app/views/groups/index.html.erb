@@ -1,21 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Groups</h1>
-
-
-
-    <% @groups.each do |group| %>
-    <%= link_to user_group_activities_path(current_user, group) do %>
-      <div>
-        <p><%= group.total_group_cost %>
-        <p><%= group.name %></p>
-        <p><%= group.icon %></p>
-        <p><%= group.user_id %></p>
-      </div>
-    <% end %>
-    <% end %>
-
-
-<br>
-
-<%= link_to 'New Group', new_user_group_path %>
+<section class="group">
+<%= render 'shared/nav_bar', title: 'TRANSACTIONS', action_btn: ('Search') %>
+  <p id="notice"><%= notice %></p>
+    <div class="group-list">
+      <% @groups.each do |group| %>
+        <%= link_to user_group_activities_path(current_user, group) do %>
+          <div>
+            <p><%= group.total_group_cost %>
+            <p><%= group.name %></p>
+            <p><%= group.icon %></p>
+            <p><%= group.user_id %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <div class="btn-container">
+    <%= button_to 'ADD CATEGORY', new_user_group_path, method: :get, class:'btn-3' %>
+  </div>
+</section>
