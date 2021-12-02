@@ -1,5 +1,7 @@
 <section class='login'>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
     <div class="my-field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
@@ -11,8 +13,6 @@
       <%= render 'shared/nav_bar', title: 'LOGIN', action_btn: (f.submit 'Log in') %>
   <% end %>
 
-  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    <%= link_to "Forgot password?", new_password_path(resource_name), class: 'message-link' %><br />
-  <% end %>
+  <%= link_to "Forgot password?", new_password_path(resource_name), class: 'message-link' %><br />
 
   </section>

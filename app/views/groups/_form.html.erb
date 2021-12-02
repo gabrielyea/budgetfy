@@ -1,6 +1,4 @@
-<%= link_to icons_path, data: { turbo_frame: "modal" } do %>
- Testing
- <%end%>
+<section class='login'>
 <%= form_with(model: group, url: user_groups_path) do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
@@ -14,21 +12,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="my-field">
+    <%= form.text_field :name, placeholder: 'Category name' %>
   </div>
 
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
+  <div class="my-field" data-controller="modal" data-target="modal.add">
+    <%= form.hidden_field :icon %>
   </div>
 
-  <div class="field">
-    <%= form.hidden_field :user_id, value: current_user.id %>
+  <div class="icon-display-container">
+    <img src="" alt="Icon image" class="icon-display">
+    <%= link_to icons_path, data: { turbo_frame: "modal" }, class:'message-link' do %>
+      Pick an icon!
+    <%end%>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+
+   <%= render 'shared/nav_bar', title: 'NEW CATEGORY', action_btn: '' %>
+
+  <div class="my-green-input">
+    <%= form.submit value:'CREATE GROUP' %>
   </div>
 <% end %>
+</section>

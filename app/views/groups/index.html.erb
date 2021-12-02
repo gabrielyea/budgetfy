@@ -5,7 +5,7 @@
       <% @groups.each do |group| %>
         <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>
           <div class="group-card">
-            <p><%= group.icon %></p>
+            <%= image_tag group.icon %>
             <div class="basic-data">
               <p><%= group.name %></p>
               <p><%= group.created_at.to_date.to_s(:long) %>

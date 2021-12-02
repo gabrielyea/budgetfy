@@ -1,9 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
+  static targets = ["add"]
 
   close() {
-    console.log('close')
+    document.querySelector('.modal-section').remove()
     this.element.remove()
     this.modalTurboFrame.src = null
   }
@@ -14,5 +15,10 @@ export default class extends Controller {
 
   get modalTurboFrame() {
     return document.querySelector("turbo-frame[id='modal']")
+  }
+
+  pickIcon(e) {
+    document.querySelector('#group_icon').value = e.target.src
+    document.querySelector('.icon-display').src = e.target.src
   }
 }
