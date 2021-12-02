@@ -1,5 +1,10 @@
-<h1>New Activity</h1>
+<section class="group">
+<%= render 'shared/nav_bar', title: 'NEW ACTIVITY', action_btn: '', back_path: user_group_activities_path  %>
+  <p id="notice"><%= notice %></p>
 
-<%= render 'form', activity: @activity %>
+<section class="login">
+  <%= render 'form', activity: @activity %>
+</section>
 
 <%= link_to 'Back', user_group_activities_path %>
+</section>

@@ -5,22 +5,23 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #F1F3F2;
+  background-color: #f1f3f2;
 
   .group-list {
     height: 80vh;
     overflow-y: scroll;
     position: relative;
     top: 60px;
-    
+
     .my-link {
       text-decoration: none;
-      background-color: none;
+      background-color: transparent;
 
-      &:hover{
+      &:hover {
         color: black;
         background-color: transparent;
       }
+
       .group-card {
         background-color: white;
         display: grid;
@@ -46,7 +47,8 @@
       }
     }
   }
-  .btn-container{
+
+  .btn-container {
     form {
       display: flex;
       justify-content: center;
@@ -55,10 +57,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #60B524;
+    background-color: #60b524;
     position: fixed;
     bottom: 0;
     width: 100%;
+  }
+
+  .aux-info {
+    background-color: #3979c3;
+    height: 25px;
+    position: relative;
+    top: 50px;
   }
 }
 
@@ -77,7 +86,7 @@
     text-align: center;
     width: 100px;
     height: 100px;
-    background-color: #3979C3;
+    background-color: #3979c3;
     box-shadow: 5px 5px 5px rgb(209, 209, 209);
   }
 }

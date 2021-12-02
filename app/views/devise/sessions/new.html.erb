@@ -10,7 +10,7 @@
       <%= f.password_field :password, autocomplete: "current-password" %>
     </div>
 
-      <%= render 'shared/nav_bar', title: 'LOGIN', action_btn: (f.submit 'Log in') %>
+      <%= render 'shared/nav_bar', title: 'LOGIN', action_btn: (f.submit 'Log in'), back_path: root_path %>
   <% end %>
 
   <%= link_to "Forgot password?", new_password_path(resource_name), class: 'message-link' %><br />

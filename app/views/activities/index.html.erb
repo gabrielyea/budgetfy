@@ -1,28 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Activities</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Amount</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @activities.each do |activity| %>
+<section class="group">
+<%= render 'shared/nav_bar', title: 'ACTIVITIES', action_btn: '', back_path: user_groups_path %>
+  <div class="aux-info">
+    <p style='text-align: center; color: white'>
+      Total:
+      <%= @group.total_group_cost %> 
+    </p>
+  </div>
+  <table>
+    <thead>
       <tr>
-        <td><%= activity.name %></td>
-        <td><%= activity.amount %></td>
-        <td><%= activity.author_id %></td>
+        <th>Name</th>
+        <th>Amount</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @activities.each do |activity| %>
+        <tr>
+          <td><%= activity.name %></td>
+          <td><%= activity.amount %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Activity', new_user_group_activity_path %>
+  <br>
+  <div class="btn-container">
+    <%= button_to 'NEW ACTIVITY', new_user_group_activity_path, method: :get, class: "btn-3" %>
+  </div>
+</section>

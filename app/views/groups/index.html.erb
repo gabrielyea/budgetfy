@@ -1,6 +1,6 @@
 <section class="group">
-<%= render 'shared/nav_bar', title: 'TRANSACTIONS', action_btn: ('Search') %>
-  <p id="notice"><%= notice %></p>
+<%= render 'shared/nav_bar', title: 'CATEGORIES', action_btn: ('Search'), back_path: root_path %>
+  <p id="notice"><%= notice %> </p>
     <div class="group-list">
       <% @groups.each do |group| %>
         <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>
@@ -10,7 +10,7 @@
               <p><%= group.name %></p>
               <p><%= group.created_at.to_date.to_s(:long) %>
             </div>
-            <p><%= group.total_group_cost %>
+            <p> <%= group.total_group_cost %> </p>
           </div>
         <% end %>
       <% end %>

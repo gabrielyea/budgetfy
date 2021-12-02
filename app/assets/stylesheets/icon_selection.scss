@@ -11,7 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   .modal {
     width: 200px;
     height: 400px;
@@ -21,7 +21,7 @@
     overflow-x: hidden;
     animation: dropdown 0.3s ease-in;
     transform-origin: top;
-  
+
     .modal-window {
       display: grid;
       grid-template-columns: 50px 50px 50px;
@@ -30,7 +30,7 @@
       padding: 1em 0;
 
       button {
-        background-color: #3979C3;
+        background-color: #3979c3;
         border: none;
         border-radius: 8px;
       }
@@ -45,7 +45,7 @@
     from {
       transform: scaleY(0);
     }
-  
+
     to {
       transform: scaleY(1);
     }

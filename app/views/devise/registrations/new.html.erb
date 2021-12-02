@@ -18,7 +18,7 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password" %>
     </div>
 
-    <%= render 'shared/nav_bar', title: 'SIGN UP', action_btn: (f.submit 'Sign up') %>
+    <%= render 'shared/nav_bar', title: 'SIGN UP', action_btn: (f.submit 'Sign up'), back_path: root_path %>
   <% end %>
 
   <%= link_to "Log in", new_session_path(resource_name), class: 'message-link' %>

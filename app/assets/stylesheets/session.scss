@@ -5,7 +5,7 @@
   align-items: center;
   gap: 1em;
   height: 100vh;
-  background-color: #F5F6F8;
+  background-color: #f5f6f8;
 
   form {
     width: 100%;
@@ -16,9 +16,10 @@
     color: rgb(199, 198, 198);
     text-decoration: none;
     padding: 0.2rem;
+
     &:hover {
       border-radius: 8px;
-      background-color: #3979C3;
+      background-color: #3979c3;
       color: white;
       box-shadow: 2px 2px 2px rgb(204, 204, 204);
     }

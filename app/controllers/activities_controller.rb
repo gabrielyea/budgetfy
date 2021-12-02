@@ -3,7 +3,8 @@ class ActivitiesController < ApplicationController
 
   # GET /activities or /activities.json
   def index
-    @activities = Group.find(params['group_id']).activities
+    @group = Group.find(params['group_id'])
+    @activities = @group.activities
   end
 
   # GET /activities/1 or /activities/1.json

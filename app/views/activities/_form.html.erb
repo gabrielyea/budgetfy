@@ -11,17 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="my-field">
+    <%= form.text_field :name, placeholder: 'Name' %>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
+  <div class="my-field">
+    <%= form.text_field :amount, placeholder: 'Amount' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="my-green-input">
+    <%= form.submit value:"CREATE ACTIVITY" %>
   </div>
 <% end %>
