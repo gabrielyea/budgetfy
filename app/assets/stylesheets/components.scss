@@ -1,5 +1,5 @@
 .btn-1 {
-  background-color: #3979c3;
+  background-color: var(--main-blue);
   border: none;
   border-radius: 4px;
   color: white;
@@ -19,7 +19,7 @@
 }
 
 .btn-3 {
-  background-color: #60b524;
+  background-color: var(--main-green);
   border: 1px white solid;
   border-radius: 4px;
   color: white;
@@ -32,8 +32,8 @@
 .my-field {
   input {
     background: #fff;
-    border: rgba(199, 198, 198, 0.555) 1px solid;
-    color: rgb(163, 163, 163);
+    border: var(--second-bg-color) 1px solid;
+    color: var(--font-color-3);
     width: 100%;
     height: 3em;
     font-size: 1em;
@@ -55,7 +55,9 @@
     border: white solid 1px;
     border-radius: 4px;
     margin: 1em;
-    padding: 1em 35vw;
+    padding: 1em 20%;
     color: white;
+    text-align: center;
+    text-transform: uppercase;
   }
 }

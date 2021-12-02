@@ -31,8 +31,14 @@
       text-decoration: none;
       color: white;
       font-size: 2em;
-      padding: 1rem;
+      padding: 0 1rem;
       text-align: left;
+      transform: scale(1);
+    }
+    &:hover {
+      transition: transform 0.1s ease-in;
+      transform: scale(1.1);
+      border-radius: 8px;
     }
   }
 }

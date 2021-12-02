@@ -23,7 +23,6 @@
       }
     }
   }
-
   .btn-container {
     form {
       display: flex;
@@ -89,7 +88,7 @@
 
   .inner-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 1fr;
 
     .card-title {

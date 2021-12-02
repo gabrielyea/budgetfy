@@ -21,10 +21,10 @@ class ActivitiesController < ApplicationController
   # POST /activities or /activities.json
   def create
     @activity = Activity.new(activity_params)
-    @group = Group.find(params['group_id']).activities << @activity
 
     respond_to do |format|
       if @activity.save
+        @group = Group.find(params['group_id']).activities << @activity
         format.html { redirect_to user_group_activities_path, notice: 'Activity was successfully created.' }
         format.json { render :show, status: :created, location: @activity }
       else
