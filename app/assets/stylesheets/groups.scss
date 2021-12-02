@@ -21,30 +21,6 @@
         color: black;
         background-color: transparent;
       }
-
-      .group-card {
-        background-color: white;
-        display: grid;
-        width: 90%;
-        height: 100px;
-        grid-template-columns: 1fr 3fr 1fr;
-        box-shadow: 1px 1px 1px rgb(192, 192, 192);
-        padding: 1em;
-        margin: 1em auto;
-
-        img {
-          width: 60px;
-          height: 60px;
-          align-self: center;
-        }
-
-        .basic-data {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: flex-start;
-        }
-      }
     }
   }
 
@@ -88,5 +64,53 @@
     height: 100px;
     background-color: #3979c3;
     box-shadow: 5px 5px 5px rgb(209, 209, 209);
+  }
+}
+
+.group-card {
+  background-color: var(--main-bg-color);
+  display: grid;
+  width: 90%;
+  height: 100px;
+  grid-template-columns: 1fr 3fr;
+  box-shadow: 1px 1px 1px var(--font-color-3);
+  padding: 1em 0;
+  margin: 1em auto;
+
+  img {
+    width: 60px;
+    height: 60px;
+    align-self: center;
+    background-color: var(--main-blue);
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin: auto;
+  }
+
+  .inner-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 3fr 1fr;
+
+    .card-title {
+      color: var(--font-color-2);
+      padding: 1em 0;
+    }
+
+    .card-amount {
+      padding: 1em 0.5em;
+      text-align: end;
+      color: var(--font-color-1);
+    }
+
+    .card-date {
+      grid-column: 1 / span 2;
+      font-size: 0.6rem;
+      align-self: baseline;
+      border-top: #f1f3f2 solid 2px;
+      padding: 1em 0;
+      color: var(--font-color-2);
+      padding: 1em 0;;
+    }
   }
 }
