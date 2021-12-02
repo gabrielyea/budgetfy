@@ -16,7 +16,7 @@ RSpec.describe "activitites integration tests", type: :feature do
     visit new_user_group_activity_path @user, @group
     fill_in 'Name', with: 'test name'
     fill_in 'Amount', with: 123456
-    click_button 'Create Activity'
+    click_button 'CREATE ACTIVITY'
     expect(page).to have_content('test name')
   end
 
@@ -24,7 +24,26 @@ RSpec.describe "activitites integration tests", type: :feature do
     visit new_user_group_activity_path @user, @group
     fill_in 'Name', with: 'test name'
     fill_in 'Amount', with: 'string'
-    click_button 'Create Activity'
+    click_button 'CREATE ACTIVITY'
     expect(page).to have_content('Amount is not a number')
+  end
+
+  it 'should fail to create a activity with no name' do
+    visit new_user_group_activity_path @user, @group
+    fill_in 'Amount', with: '123'
+    click_button 'CREATE ACTIVITY'
+    expect(page).to have_content("Name can't be blank")
+  end
+
+  it 'should add the correct total amount' do
+    visit new_user_group_activity_path @user, @group
+    fill_in 'Name', with: 'test name 1'
+    fill_in 'Amount', with: '1'
+    click_button 'CREATE ACTIVITY'
+    visit new_user_group_activity_path @user, @group
+    fill_in 'Name', with: 'test name 2'
+    fill_in 'Amount', with: '2'
+    click_button 'CREATE ACTIVITY'
+    expect(page).to have_content('3')
   end
 end

@@ -3,11 +3,11 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     
     <div class="my-field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
     </div>
 
     <div class="my-field">
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
     </div>
 
       <%= render 'shared/nav_bar', title: 'LOGIN', action_btn: (f.submit 'Log in'), back_path: root_path %>

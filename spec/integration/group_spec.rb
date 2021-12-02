@@ -3,6 +3,9 @@ require 'rails_helper'
 RSpec.describe "groups integration tests", type: :feature do
   before(:each) do
   @user = create(:user)
+  @group = create(:group, user_id: @user.id)
+  # @group.user_id = @user.id
+
   visit new_user_session_path
     within('#new_user') do
       fill_in 'Email', with: @user.email
@@ -11,23 +14,29 @@ RSpec.describe "groups integration tests", type: :feature do
     click_button 'Log in'
   end
 
-  it 'should have a new group link' do
-    click_link 'New Group'
-    expect(page).to have_content('New Group')
+  it 'should go to main category page' do
+    visit user_groups_path @user
+    expect(page).to have_content('CATEGORIES')
   end
 
-  it 'should create a new group' do
-    visit new_user_group_path @user
-    fill_in 'Name', with: 'test name'
-    fill_in 'Icon', with: 'test icon'
-    click_button 'Create Group'
-    expect(page).to have_content('test name')
+  it 'should go to main category page' do
+    visit user_groups_path @user
+    click_button 'ADD CATEGORY'
+    expect(page).to have_content('NEW CATEGORY')
   end
 
-  it 'should fail whith empty inputs' do
+  it 'should create a new category' do
     visit new_user_group_path @user
-    fill_in 'Icon', with: 'test icon'
-    click_button 'Create Group'
-    expect(page).to have_content("Name can't be blank")
+    fill_in 'Category name', with: @group.name
+    fill_in 'Icon url', with: @group.icon
+    click_button 'CREATE GROUP'
+    expect(page).to have_content("Group was successfully created.")
+  end
+
+  it 'should fail to create a new category' do
+    visit new_user_group_path @user
+    fill_in 'Category name', with: @group.name
+    click_button 'CREATE GROUP'
+    expect(page).to have_content("Icon can't be blank")
   end
 end

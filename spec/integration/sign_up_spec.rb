@@ -5,19 +5,17 @@ RSpec.describe 'Sign up page', type: :feature do
 
     it 'expects to go to sign-up page' do
       visit new_user_registration_path
-      expect(page).to have_content('Name')
-      expect(page).to have_content('Email')
-      expect(page).to have_content('Password')
+      expect(page).to have_content('SIGN UP')
       expect(page).to have_content('Log in')
     end
 
     it 'shoud correctly sign up a new user' do
       @user_login = create(:user)
       visit new_user_registration_path
-      fill_in 'Name', with: @user_login.name
+      fill_in 'Full Name', with: @user_login.name
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: @user_login.password
-      fill_in 'Password confirmation', with: @user_login.password
+      fill_in 'Confirm password', with: @user_login.password
       click_button 'Sign up'
       expect(page).to have_content('Welcome! You have signed up successfully.')
     end
@@ -27,7 +25,7 @@ RSpec.describe 'Sign up page', type: :feature do
       visit new_user_registration_path
       fill_in 'Email', with: 'test@gmail.com'
       fill_in 'Password', with: @user_login.password
-      fill_in 'Password confirmation', with: @user_login.password
+      fill_in 'Confirm password', with: @user_login.password
       click_button 'Sign up'
       expect(page).to have_content("Name can't be blank")
     end
@@ -35,10 +33,10 @@ RSpec.describe 'Sign up page', type: :feature do
     it 'should not be able to sign up a repeated email' do
       @user_login = create(:user)
       visit new_user_registration_path
-      fill_in 'Name', with: @user_login.name
+      fill_in 'Full Name', with: @user_login.name
       fill_in 'Email', with: @user_login.email
       fill_in 'Password', with: @user_login.password
-      fill_in 'Password confirmation', with: @user_login.password
+      fill_in 'Confirm password', with: @user_login.password
       click_button 'Sign up'
       expect(page).to have_content("Email has already been taken")
     end
