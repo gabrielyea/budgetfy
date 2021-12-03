@@ -30,9 +30,11 @@ a:hover {
   border-radius: 18px;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid var(--second-bg-color);
-  color: var(--font-color-2)
+  color: var(--font-color-2);
 }
 
 table {
@@ -45,7 +47,7 @@ table {
   border-radius: 18px;
   box-shadow: 5px 5px 5px var(--font-color-3);
 
-  tbody{
+  tbody {
     display: block;
     max-height: 300px;
     overflow-y: auto;
@@ -57,6 +59,7 @@ tr {
   width: 100%;
   display: inline-table;
 }
+
 thead {
   width: 100%;
   display: inline-table;
