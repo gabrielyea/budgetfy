@@ -20,12 +20,16 @@ class ActivitiesController < ApplicationController
 
   # POST /activities or /activities.json
   def create
+    return redirect_to new_user_group_activity_path, alert: 'Select a category' if params['groups'].nil?
 
     @activity = Activity.new(activity_params)
 
+    params['groups'].each do |id|
+      @activity.groups << Group.find(id)
+    end
+
     respond_to do |format|
       if @activity.save
-        # @group = Group.find(params['group_id']).activities << @activity
         format.html { redirect_to user_group_activities_path, notice: 'Activity was successfully created.' }
         format.json { render :show, status: :created, location: @activity }
       else

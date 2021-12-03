@@ -1,3 +1,30 @@
 // Place all the styles related to the Activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.checkbox-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2em;
+  padding: 1em;
+
+  .checkbox-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    label {
+      text-align: center;
+      font-size: 4vw;
+      word-break: break-all;
+    }
+
+    img {
+      background-color: var(--main-blue);
+      border-radius: 18px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

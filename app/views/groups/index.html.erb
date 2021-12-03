@@ -1,6 +1,12 @@
 <section class="group slide-in">
 <%= render 'shared/nav_bar', title: 'CATEGORIES', action_btn: '', back_path: root_path %>
   <p id="notice"><%= notice %> </p>
+  <div class="aux-info">
+    <p style='text-align: center; color: white'>
+      Total:
+      <%= current_user.activities.sum(:amount) %> 
+    </p>
+  </div>
     <div class="group-list">
       <% @groups.each do |group| %>
         <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>

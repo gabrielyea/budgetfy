@@ -19,10 +19,13 @@
     <%= form.text_field :amount, placeholder: 'Amount' %>
   </div>
 
-  <div style='display: flex; flex-direction: column; justify-content: center; align-items: center'>
+  <div class="checkbox-container">
     <% current_user.groups.each do |group| %>
-      <%= form.label group.name%>
-      <%= form.check_box :groups, { multiple: true }, group.id, false %>
+    <div class="checkbox-item">
+      <%= form.label group.name %>
+      <%= image_tag group.icon %>
+      <%= check_box_tag '[groups][]', group.id %>
+    </div>
     <% end %>
   </div>
 
