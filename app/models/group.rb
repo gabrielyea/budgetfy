@@ -9,7 +9,7 @@ class Group < ApplicationRecord
 
   def total_group_cost
     activities.reduce(0) do |sum, item|
-      sum + item.amount
+      sum + item['amount'].to_int
     end
   end
 end

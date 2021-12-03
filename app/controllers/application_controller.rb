@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     user_groups_path(resource)
   end
 
+  def after_sign_up_path_for(_resources)
+    user_groups_path(resource)
+  end
+
   protected
 
   def update_allowed_parameters
