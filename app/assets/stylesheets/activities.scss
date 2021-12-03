@@ -7,16 +7,21 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2em;
   padding: 1em;
+  justify-items: center;
 
   .checkbox-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgb(177, 177, 177);
+    width: 15vw;
 
     label {
       text-align: center;
-      font-size: 4vw;
+      font-size: 2vw;
       word-break: break-all;
     }
 
@@ -25,6 +30,10 @@
       border-radius: 18px;
       width: 40px;
       height: 40px;
+    }
+
+    input {
+      margin: 1em 0;
     }
   }
 }
