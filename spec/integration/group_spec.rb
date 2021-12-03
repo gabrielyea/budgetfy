@@ -19,7 +19,7 @@ RSpec.describe "groups integration tests", type: :feature do
     expect(page).to have_content('CATEGORIES')
   end
 
-  it 'should go to main category page' do
+  it 'should go to new category page' do
     visit user_groups_path @user
     click_button 'ADD CATEGORY'
     expect(page).to have_content('NEW CATEGORY')
