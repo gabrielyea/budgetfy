@@ -1,24 +1,96 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Budetfy! 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Budetfy lets you manage your spending on different activities and categories! The app was built with ruby on rails.
 
-Things you may want to cover:
+## :camera: Screenshot
 
-* Ruby version
 
-* System dependencies
+## :red_circle: Live Project
+- [Live Project](https://budgetfy-rails.herokuapp.com/)
 
-* Configuration
+## :red_circle: Video Preview
 
-* Database creation
+- [Video Link](https://www.loom.com/share/747ace8b9fa94518afc8c493be5aac2d)
+## :hammer: Preview
 
-* Database initialization
+- Under construction
 
-* How to run the test suite
+## :hammer: Built With
 
-* Services (job queues, cache servers, search engines, etc.)
+- Ruby on Rails
+- Hotwired
 
-* Deployment instructions
+To get a local copy up and running follow these simple steps:
 
-* ...
+**First Steps**
+
+1. Clone it using git command:
+```ruby
+git clone https://github.com/ArthurGC/budget-app.git
+```
+
+**Run in development (locally)**
+
+1. Install gem files and dependencies:
+```ruby
+bundle install
+```
+```ruby
+yarn install
+```
+2. Setup data base
+```ruby
+rails db:setup
+
+rails db:migrate
+```
+
+3. Run server
+```ruby
+rails server
+```
+
+**Run tests**
+
+1. To run all tests in the project
+```ruby
+rspec
+``` 
+If you wanna run a certain test file
+```ruby
+rspec spec/test_file_path
+```
+
+## Troubleshooting
+
+If you encounter any issues with webpacker, try to run 
+```ruby
+bundle exec rake webpacker:install
+```
+
+
+## Authors
+
+👤 **Gabriel Rendon**
+
+- GitHub: [@gabrielyea](https://github.com/gabrielyea)
+- Linkedin [Gabriel Rendon](https://www.linkedin.com/in/gabriel-rendon-paredes/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+
+## :grey_exclamation: Acknowledgments
+
+- [Microverse](https://www.microverse.org/)
+- [SnapScan Design Guideline](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.
