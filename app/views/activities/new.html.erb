@@ -1,0 +1,8 @@
+<section class="group slide-in">
+<%= render 'shared/nav_bar', title: 'NEW ACTIVITY', action_btn: '', back_path: user_group_activities_path  %>
+  <p id="notice"><%= notice %></p>
+
+  <section class="login">
+    <%= render 'form', activity: @activity %>
+  </section>
+</section>

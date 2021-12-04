@@ -1,0 +1,53 @@
+// Place all the styles related to the IconSelection controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.modal-section {
+  background: rgba(0, 0, 0, 0.527);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .modal {
+    width: 200px;
+    height: 400px;
+    background-color: rgb(43, 43, 43);
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation: dropdown 0.3s ease-in;
+    transform-origin: top;
+
+    .modal-window {
+      display: grid;
+      grid-template-columns: 50px 50px 50px;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1em 0;
+
+      button {
+        background-color: #3979c3;
+        border: none;
+        border-radius: 8px;
+      }
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+
+  @keyframes dropdown {
+    from {
+      transform: scaleY(0);
+    }
+
+    to {
+      transform: scaleY(1);
+    }
+  }
+}

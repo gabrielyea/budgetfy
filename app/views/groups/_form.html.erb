@@ -1,0 +1,37 @@
+<section class='login slide-in'>
+<%= form_with(model: group, url: user_groups_path) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-field">
+    <%= form.text_field :name, placeholder: 'Category name' %>
+  </div>
+
+  <div class="my-field" data-controller="modal" data-target="modal.add">
+    <%= form.text_field :icon, placeholder: 'Icon url' %>
+  </div>
+
+  <div class="icon-display-container">
+    <img src="" alt="Icon image" class="icon-display">
+    <%= link_to icons_path, data: { turbo_frame: "modal" }, class:'message-link' do %>
+      Pick an icon!
+    <%end%>
+  </div>
+
+
+   <%= render 'shared/nav_bar', title: 'NEW CATEGORY', action_btn: '', back_path: user_groups_path %>
+
+  <div class="my-green-input">
+    <%= form.submit value:'CREATE GROUP' %>
+  </div>
+<% end %>
+</section>

@@ -1,0 +1,16 @@
+<section class='home'>
+  <header>
+    <h1>Budgetfy</h1>
+  </header>
+  <div class='btn-container'>
+    <% unless current_user.nil?  %>
+      <%= button_to 'LOG OUT', destroy_user_session_path, method: :delete, class: 'btn-1' %>
+      <%= button_to 'MY PAGE', user_groups_path(current_user), data: { turbo: false }, method: :get, class: 'btn-2' %>
+    <% else %>
+      <%= button_to 'LOG IN', new_user_session_path, data: { turbo: false }, method: :get, class: 'btn-1' %>
+      <%= button_to 'SIGN UP', new_user_registration_path, data: { turbo: false }, method: :get, class: 'btn-2' %>
+    <% end %>
+
+  </div>
+</section>
+

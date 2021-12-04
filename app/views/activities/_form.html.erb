@@ -1,0 +1,35 @@
+<%= form_with(model: activity, url: user_group_activities_path) do |form| %>
+  <% if activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+        <% activity.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-field">
+    <%= form.text_field :name, placeholder: 'Name' %>
+  </div>
+
+  <div class="my-field">
+    <%= form.text_field :amount, placeholder: 'Amount' %>
+  </div>
+
+  <div class="checkbox-container">
+    <% current_user.groups.each do |group| %>
+    <div class="checkbox-item">
+      <%= form.label group.name %>
+      <%= image_tag group.icon %>
+      <%= check_box_tag '[groups][]', group.id %>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="my-green-input">
+    <%= form.submit value:"CREATE ACTIVITY" %>
+  </div>
+<% end %>

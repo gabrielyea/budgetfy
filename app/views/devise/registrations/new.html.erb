@@ -1,0 +1,26 @@
+<section class='login'>
+  <%= form_for(resource, as: resource_name) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="my-field">
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Full Name" %>
+    </div>
+
+    <div class="my-field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    </div>
+
+    <div class="my-field">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+    </div>
+
+    <div class="my-field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password" %>
+    </div>
+
+    <%= render 'shared/nav_bar', title: 'SIGN UP', action_btn: (f.submit 'Sign up'), back_path: root_path %>
+  <% end %>
+
+  <%= link_to "Log in", new_session_path(resource_name), class: 'message-link' %>
+
+</section>

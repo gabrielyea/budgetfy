@@ -1,0 +1,13 @@
+<turbo-frame id="modal">
+  <section class="modal-section" data-action="click->modal#close" data-controller="modal">
+    <div class="modal" data-action="keyup@document->modal#escClose">
+      <div class="modal-window">
+        <% IconSelection.fetch_icons[24...].each do |icon| %>
+          <button type="button" data-action="modal#pickIcon">
+            <%= image_tag icon %>
+          </button>
+        <%end%>
+      </div>
+    </div>
+  </section>
+</turbo-frame>

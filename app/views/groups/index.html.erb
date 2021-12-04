@@ -1,0 +1,25 @@
+<section class="group slide-in">
+  <%= render 'shared/nav_bar', title: 'CATEGORIES', action_btn: '', back_path: root_path %>
+    <div class="aux-info">
+      <p style='text-align: center; color: white'>
+        Total:
+        <%= current_user.activities.sum(:amount) %> 
+      </p>
+    </div>
+    <%# if can? :manage, User.find(params['user_id']) %>
+      <div class="group-list">
+        <% @groups.each do |group| %>
+          <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>
+            <%= render 'shared/group_card', group: group %>
+          <% end %>
+        <% end %>
+      </div>
+
+    <div class="btn-container">
+      <%= button_to 'ADD CATEGORY', new_user_group_path, method: :get, class:'btn-3' %>
+    </div>
+
+    <%# else %>
+
+    <%# end %>
+</section>

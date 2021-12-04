@@ -1,0 +1,8 @@
+<div class="group-card">
+  <%= image_tag group.icon %>
+  <div class="inner-grid">
+    <p class="card-title"><%= group.name %></p>
+    <p class="card-amount"> <%= group.total_group_cost %> </p>
+    <p class="card-date"><%= group.created_at.to_date.to_s(:long) %>
+  </div>
+</div>

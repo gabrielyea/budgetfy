@@ -1,0 +1,21 @@
+.slide-in {
+  transform-origin: right center;
+  animation: slidein 0.5s both;
+}
+
+@keyframes slidein {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  40% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}

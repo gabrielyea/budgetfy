@@ -1,0 +1,34 @@
+<section class="group slide-in">
+<%= render 'shared/nav_bar', title: 'ACTIVITIES', action_btn: '', back_path: user_groups_path %>
+  <div class="aux-info">
+    <p style='text-align: center; color: white'>
+      Total:
+      <%= @group.total_group_cost %> 
+    </p>
+  </div>
+  <div style='margin-top: 50px'>
+    <%= render 'shared/group_card', group: @group%>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @activities.each do |activity| %>
+        <tr>
+          <td><%= activity.name %></td>
+          <td><%= activity.amount %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <div class="btn-container">
+    <%= button_to 'NEW ACTIVITY', new_user_group_activity_path, method: :get, class: "btn-3" %>
+  </div>
+</section>
