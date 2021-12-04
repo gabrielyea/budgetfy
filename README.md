@@ -4,6 +4,10 @@
 Budetfy lets you manage your spending on different activities and categories! The app was built with ruby on rails.
 
 ## :camera: Screenshot
+![image](https://user-images.githubusercontent.com/28903404/144688943-ea6b2b33-416f-4357-9fa7-aacab12b6f30.png)
+![image](https://user-images.githubusercontent.com/28903404/144688995-ebc797d0-9fbf-41f0-992d-14fd5d50d748.png)
+
+## Preview
 
 
 ## :red_circle: Live Project
@@ -12,9 +16,7 @@ Budetfy lets you manage your spending on different activities and categories! Th
 ## :red_circle: Video Preview
 
 - [Video Link](https://www.loom.com/share/747ace8b9fa94518afc8c493be5aac2d)
-## :hammer: Preview
 
-- Under construction
 
 ## :hammer: Built With
 
