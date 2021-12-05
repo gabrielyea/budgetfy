@@ -30,7 +30,7 @@ To get a local copy up and running follow these simple steps:
 
 1. Clone it using git command:
 ```ruby
-git clone https://github.com/ArthurGC/budget-app.git
+git clone git@github.com:gabrielyea/budgetfy.git
 ```
 
 **Run in development (locally)**
