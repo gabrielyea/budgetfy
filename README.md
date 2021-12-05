@@ -9,6 +9,7 @@ Budetfy lets you manage your spending on different activities and categories! Th
 
 ## Preview
 ![image](https://github.com/gabrielyea/budgetfy/blob/feature-budget/transition.gif)
+![image](https://github.com/gabrielyea/budgetfy/blob/feature-budget/search-bar.gif)
 
 ## :red_circle: Live Project
 - [Live Project](https://budgetfy-rails.herokuapp.com/)
