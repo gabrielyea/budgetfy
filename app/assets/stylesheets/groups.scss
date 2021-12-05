@@ -8,10 +8,12 @@
   background-color: #f1f3f2;
 
   .group-list {
-    height: 80vh;
+    height: 500px;
     overflow-y: scroll;
     position: relative;
     top: 60px;
+    background-color: #d8d7d7;
+    border-radius: 24px;
 
     .my-link {
       text-decoration: none;
