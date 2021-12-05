@@ -1,9 +1,9 @@
 class Groups::SearchesController < ApplicationController
   def index
     @groups = if params['show_all']
-                Group.all.sortify params['sort']
+                Group.includes(:activities).where(user_id: current_user.id).sortify params['sort']
               else
-                Group.search(params[:search_this])
+                Group.includes(:activities).where(user_id: current_user.id).search(params[:search_this])
               end
 
     respond_to do |format|
