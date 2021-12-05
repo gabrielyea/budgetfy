@@ -6,20 +6,20 @@
         <%= current_user.activities.sum(:amount) %> 
       </p>
     </div>
-    <%# if can? :manage, User.find(params['user_id']) %>
-      <div class="group-list">
-        <% @groups.each do |group| %>
-          <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>
-            <%= render 'shared/group_card', group: group %>
-          <% end %>
-        <% end %>
+    <div class= "search-bar">
+      <%= form_with url: search_user_groups_path do |form| %>
+        <%= form.text_field 'search_this', placeholder: 'Search for activity' %>
+        <%= form.submit 'Search', data: { disable_with: false } %>
+      <% end %>
+      <div class="order-btn-container">
+        <%= button_to 'Recent', search_user_groups_path(show_all: true, sort: :desc) %>
+        <%= button_to 'Oldest', search_user_groups_path(show_all: true, sort: :asc) %>
       </div>
+    </div>
+
+      <%= render 'groups/listing' %>
 
     <div class="btn-container">
       <%= button_to 'ADD CATEGORY', new_user_group_path, method: :get, class:'btn-3' %>
     </div>
-
-    <%# else %>
-
-    <%# end %>
 </section>
