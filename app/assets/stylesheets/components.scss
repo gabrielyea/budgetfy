@@ -1,4 +1,4 @@
-@mixin  green-btn {
+@mixin green-btn {
   color: white;
   padding: 0.5em;
   margin: 0.5rem;
@@ -73,7 +73,7 @@
 }
 
 .search-bar {
-  top: 50px; 
+  top: 50px;
   position: relative;
   background-color: var(--main-blue);
   display: flex;
@@ -86,23 +86,26 @@
       color: grey;
       background-color: white;
     }
+
     input {
       @include green-btn();
+
       &:hover {
         background-color: rgb(12, 102, 1);
       }
     }
   }
 
-  div {
+  .order-btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    
+
     form {
       input {
         @include green-btn();
+
         &:hover {
           background-color: rgb(12, 102, 1);
         }

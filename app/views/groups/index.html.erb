@@ -11,7 +11,7 @@
         <%= form.text_field 'search_this', placeholder: 'Search for activity' %>
         <%= form.submit 'Search', data: { disable_with: false } %>
       <% end %>
-      <div>
+      <div class="order-btn-container">
         <%= button_to 'Recent', search_user_groups_path(show_all: true, sort: :desc) %>
         <%= button_to 'Oldest', search_user_groups_path(show_all: true, sort: :asc) %>
       </div>
