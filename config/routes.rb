@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
+  namespace :groups do
+    get 'searches/index'
+  end
   root 'home#index'
   devise_for :users
-  resources :users do
+  resources :users, only: [:index, :show] do
     resources :groups do
+      collection do
+        post :search, to: "groups/searches#index"
+      end
       resources :activities
     end
   end
 
   get '/icons', to: 'icon_selection#index'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

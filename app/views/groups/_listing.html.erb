@@ -1,0 +1,10 @@
+<div class="group-list" id='groupListing' >
+  <% @groups.each do |group| %>
+    <%= link_to user_group_activities_path(current_user, group), class:'my-link' do %>
+      <%= render 'shared/group_card', group: group %>
+    <% end %>
+  <% end %>
+  <% if @groups.empty? %>
+    <p style='text-align: center;'> Nothing here :( </p>
+  <% end %>
+</div>

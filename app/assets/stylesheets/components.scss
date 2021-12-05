@@ -1,3 +1,13 @@
+@mixin  green-btn {
+  color: white;
+  padding: 0.5em;
+  margin: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--main-green);
+  box-shadow: 1px 1px 1px rgb(41, 41, 41);
+}
+
 .btn-1 {
   background-color: var(--main-blue);
   border: none;
@@ -59,5 +69,44 @@
     color: white;
     text-align: center;
     text-transform: uppercase;
+  }
+}
+
+.search-bar {
+  top: 50px; 
+  position: relative;
+  background-color: var(--main-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    #search_this {
+      color: grey;
+      background-color: white;
+    }
+    input {
+      @include green-btn();
+      &:hover {
+        background-color: rgb(12, 102, 1);
+      }
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+    form {
+      input {
+        @include green-btn();
+        &:hover {
+          background-color: rgb(12, 102, 1);
+        }
+      }
+    }
   }
 }
