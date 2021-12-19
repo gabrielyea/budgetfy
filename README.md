@@ -22,7 +22,7 @@ Budetfy lets you manage your spending on different activities and categories! Th
 ## :hammer: Built With
 
 - Ruby on Rails
-- Hotwired
+- Hotwire
 
 To get a local copy up and running follow these simple steps:
 
